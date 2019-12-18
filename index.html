@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+	<title>GDPR Cookie</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<div id="app"></div>
+    <div id="cookieconsent"></div>
+    <p>Exemplo de cookies segundo a LGPD ou GDPR</p>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <script>
+      window.cookieconsent.initialise({
+        container: document.getElementById("cookieconsent"),
+        palette:{
+         popup: {background: "#252e39"},
+         button: {background: "#14a7d0"},
+        },
+        revokable: true,
+        onStatusChange: function(status) {
+         console.log(this.hasConsented() ?
+          'enable cookies' : 'disable cookies');
+        },
+        "theme": "classic",
+        "domain": "https://i71n4.csb.app/",
+        "secure": true,
+        "type": "opt-in",
+        "content": {
+          "header": 'This website uses cookies to improve your experience.',
+          "message": 'This website uses cookies to improve your experience.',
+          "dismiss": 'Decline cookies',
+          "allow": 'Allow cookies',
+          "deny": 'Decline',
+          "link": 'Learn more',
+          "href": 'https://www.cookiesandyou.com',
+          "close": '&#x274c;',
+          "policy": 'Cookie Policy',
+          "target": '_blank',
+          }
+       });
+    </script>
+    <script src="src/index.js"></script>
+</body>
+</html>
